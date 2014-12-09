@@ -1068,3 +1068,371 @@ WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xbb3ba0 pid: 23797
 *** uWSGI is running in multiple interpreter mode ***
 spawned uWSGI worker 1 (and the only) (pid: 23797, cores: 1)
 [pid: 23797|app: 0|req: 1/1] 172.16.1.224 () {46 vars in 837 bytes} [Mon Dec  8 15:05:02 2014] POST /wsgi.py => generated 513 bytes in 0 msecs (HTTP/1.1 200) 1 headers in 61 bytes (18 switches on core 0)
+*** Starting uWSGI 2.0.8 (64bit) on [Mon Dec  8 16:06:23 2014] ***
+compiled with version: 4.8.2 on 07 December 2014 22:47:15
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: nginx-webserver
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /webserver/test2
+detected binary path: /usr/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3439
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8080 fd 3
+Python version: 3.4.0 (default, Apr 11 2014, 13:08:40)  [GCC 4.8.2]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x194dba0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 72760 bytes (71 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x194dba0 pid: 26137 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 26137, cores: 1)
+[pid: 26137|app: 0|req: 1/1] 172.16.1.224 () {50 vars in 925 bytes} [Mon Dec  8 16:06:25 2014] POST /wsgi.py => generated 337 bytes in 0 msecs (HTTP/1.1 200) 1 headers in 61 bytes (5 switches on core 0)
+*** Starting uWSGI 2.0.8 (64bit) on [Mon Dec  8 16:06:58 2014] ***
+compiled with version: 4.8.2 on 07 December 2014 22:47:15
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: nginx-webserver
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /webserver/test2
+detected binary path: /usr/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3439
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8080 fd 3
+Python version: 3.4.0 (default, Apr 11 2014, 13:08:40)  [GCC 4.8.2]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x26e7ba0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 72760 bytes (71 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x26e7ba0 pid: 26138 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 26138, cores: 1)
+[pid: 26138|app: 0|req: 1/1] 172.16.1.224 () {50 vars in 925 bytes} [Mon Dec  8 16:07:00 2014] POST /wsgi.py => generated 442 bytes in 0 msecs (HTTP/1.1 200) 1 headers in 61 bytes (0 switches on core 0)
+*** Starting uWSGI 2.0.8 (64bit) on [Mon Dec  8 16:18:06 2014] ***
+compiled with version: 4.8.2 on 07 December 2014 22:47:15
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: nginx-webserver
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /webserver/test2
+detected binary path: /usr/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3439
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8080 fd 3
+Python version: 3.4.0 (default, Apr 11 2014, 13:08:40)  [GCC 4.8.2]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xafaba0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 72760 bytes (71 KB) for 1 cores
+*** Operational MODE: single process ***
+Traceback (most recent call last):
+  File "./wsgi.py", line 2, in <module>
+    import dsportal
+  File "./dsportal.py", line 32
+    if 	titleVerification[0] == True and
+                                       ^
+SyntaxError: invalid syntax
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 26171, cores: 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 26171|app: -1|req: -1/1] 172.16.1.224 () {42 vars in 660 bytes} [Mon Dec  8 16:18:09 2014] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+*** Starting uWSGI 2.0.8 (64bit) on [Mon Dec  8 16:19:42 2014] ***
+compiled with version: 4.8.2 on 07 December 2014 22:47:15
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: nginx-webserver
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /webserver/test2
+detected binary path: /usr/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3439
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8080 fd 3
+Python version: 3.4.0 (default, Apr 11 2014, 13:08:40)  [GCC 4.8.2]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1dd7ba0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 72760 bytes (71 KB) for 1 cores
+*** Operational MODE: single process ***
+Traceback (most recent call last):
+  File "./wsgi.py", line 2, in <module>
+    import dsportal
+  File "./dsportal.py", line 36
+    '''
+    ^
+IndentationError: expected an indented block
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 26173, cores: 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 26173|app: -1|req: -1/1] 172.16.1.224 () {42 vars in 660 bytes} [Mon Dec  8 16:19:43 2014] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+*** Starting uWSGI 2.0.8 (64bit) on [Mon Dec  8 16:20:15 2014] ***
+compiled with version: 4.8.2 on 07 December 2014 22:47:15
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: nginx-webserver
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /webserver/test2
+detected binary path: /usr/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3439
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8080 fd 3
+Python version: 3.4.0 (default, Apr 11 2014, 13:08:40)  [GCC 4.8.2]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x19b7ba0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 72760 bytes (71 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x19b7ba0 pid: 26176 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 26176, cores: 1)
+Traceback (most recent call last):
+  File "./wsgi.py", line 7, in application
+    contentLength = int(env['CONTENT_LENGTH'])
+ValueError: invalid literal for int() with base 10: ''
+[pid: 26176|app: 0|req: 1/1] 172.16.1.224 () {42 vars in 660 bytes} [Mon Dec  8 16:20:17 2014] GET / => generated 0 bytes in 48 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 0)
+*** Starting uWSGI 2.0.8 (64bit) on [Mon Dec  8 16:20:22 2014] ***
+compiled with version: 4.8.2 on 07 December 2014 22:47:15
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: nginx-webserver
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /webserver/test2
+detected binary path: /usr/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3439
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8080 fd 3
+Python version: 3.4.0 (default, Apr 11 2014, 13:08:40)  [GCC 4.8.2]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x207fba0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 72760 bytes (71 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x207fba0 pid: 26177 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 26177, cores: 1)
+Traceback (most recent call last):
+  File "./wsgi.py", line 7, in application
+    contentLength = int(env['CONTENT_LENGTH'])
+ValueError: invalid literal for int() with base 10: ''
+[pid: 26177|app: 0|req: 1/1] 172.16.1.224 () {42 vars in 660 bytes} [Mon Dec  8 16:20:23 2014] GET / => generated 0 bytes in 49 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 0)
+*** Starting uWSGI 2.0.8 (64bit) on [Mon Dec  8 16:20:45 2014] ***
+compiled with version: 4.8.2 on 07 December 2014 22:47:15
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: nginx-webserver
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /webserver/test2
+detected binary path: /usr/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3439
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8080 fd 3
+Python version: 3.4.0 (default, Apr 11 2014, 13:08:40)  [GCC 4.8.2]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x904ba0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 72760 bytes (71 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x904ba0 pid: 26180 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 26180, cores: 1)
+[pid: 26180|app: 0|req: 1/1] 172.16.1.224 () {42 vars in 660 bytes} [Mon Dec  8 16:20:47 2014] GET / => generated 0 bytes in 0 msecs (HTTP/1.1 200) 1 headers in 61 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.8 (64bit) on [Mon Dec  8 16:21:26 2014] ***
+compiled with version: 4.8.2 on 07 December 2014 22:47:15
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: nginx-webserver
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /webserver/test2
+detected binary path: /usr/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3439
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8080 fd 3
+Python version: 3.4.0 (default, Apr 11 2014, 13:08:40)  [GCC 4.8.2]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1306ba0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 72760 bytes (71 KB) for 1 cores
+*** Operational MODE: single process ***
+Traceback (most recent call last):
+  File "./wsgi.py", line 2, in <module>
+    import dsportal
+  File "./dsportal.py", line 36
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 26182, cores: 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 26182|app: -1|req: -1/1] 172.16.1.224 () {42 vars in 660 bytes} [Mon Dec  8 16:21:27 2014] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+*** Starting uWSGI 2.0.8 (64bit) on [Mon Dec  8 16:22:03 2014] ***
+compiled with version: 4.8.2 on 07 December 2014 22:47:15
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: nginx-webserver
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /webserver/test2
+detected binary path: /usr/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3439
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8080 fd 3
+Python version: 3.4.0 (default, Apr 11 2014, 13:08:40)  [GCC 4.8.2]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x19ccba0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 72760 bytes (71 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x19ccba0 pid: 26185 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 26185, cores: 1)
+[pid: 26185|app: 0|req: 1/1] 172.16.1.224 () {42 vars in 660 bytes} [Mon Dec  8 16:22:04 2014] GET / => generated 1226 bytes in 0 msecs (HTTP/1.1 200) 1 headers in 61 bytes (1 switches on core 0)
+[pid: 26185|app: 0|req: 2/2] 172.16.1.224 () {42 vars in 660 bytes} [Mon Dec  8 16:22:59 2014] GET / => generated 1119 bytes in 0 msecs (HTTP/1.1 200) 1 headers in 61 bytes (1 switches on core 0)
+Traceback (most recent call last):
+  File "./wsgi.py", line 19, in application
+    return(dsportal.post(post))
+  File "./dsportal.py", line 23, in post
+    titleVerification = verifyPostField(httpPost['title'], 60, 1)
+TypeError: string indices must be integers
+[pid: 26185|app: 0|req: 3/3] 172.16.1.224 () {50 vars in 925 bytes} [Mon Dec  8 16:23:35 2014] POST /wsgi.py => generated 0 bytes in 50 msecs (HTTP/1.1 200) 1 headers in 61 bytes (0 switches on core 0)
+*** Starting uWSGI 2.0.8 (64bit) on [Mon Dec  8 19:16:12 2014] ***
+compiled with version: 4.8.2 on 07 December 2014 22:47:15
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: nginx-webserver
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /webserver/test2
+detected binary path: /usr/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3439
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8080 fd 3
+Python version: 3.4.0 (default, Apr 11 2014, 13:08:40)  [GCC 4.8.2]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1195ba0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 72760 bytes (71 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1195ba0 pid: 26307 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 26307, cores: 1)
+[pid: 26307|app: 0|req: 1/1] 172.16.1.224 () {42 vars in 660 bytes} [Mon Dec  8 19:16:15 2014] GET / => generated 1119 bytes in 0 msecs (HTTP/1.1 200) 1 headers in 61 bytes (1 switches on core 0)
+[pid: 26307|app: 0|req: 2/2] 172.16.1.224 () {42 vars in 660 bytes} [Mon Dec  8 19:16:17 2014] GET / => generated 1119 bytes in 0 msecs (HTTP/1.1 200) 1 headers in 61 bytes (1 switches on core 0)
+Traceback (most recent call last):
+  File "./wsgi.py", line 19, in application
+    return(dsportal.post(post))
+  File "./dsportal.py", line 72, in post
+    titleVerification = verifyPostField(httpPost['title'], 60, 1)
+TypeError: string indices must be integers
+[pid: 26307|app: 0|req: 3/3] 172.16.1.224 () {50 vars in 925 bytes} [Mon Dec  8 19:16:22 2014] POST /wsgi.py => generated 0 bytes in 42 msecs (HTTP/1.1 200) 1 headers in 61 bytes (0 switches on core 0)
+Traceback (most recent call last):
+  File "./wsgi.py", line 19, in application
+    return(dsportal.post(post))
+  File "./dsportal.py", line 72, in post
+    titleVerification = verifyPostField(httpPost['title'], 60, 1)
+TypeError: string indices must be integers
+[pid: 26307|app: 0|req: 4/4] 172.16.1.224 () {50 vars in 925 bytes} [Mon Dec  8 19:18:42 2014] POST /wsgi.py => generated 0 bytes in 0 msecs (HTTP/1.1 200) 1 headers in 61 bytes (0 switches on core 0)
+*** Starting uWSGI 2.0.8 (64bit) on [Mon Dec  8 19:22:27 2014] ***
+compiled with version: 4.8.2 on 07 December 2014 22:47:15
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: nginx-webserver
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /webserver/test2
+detected binary path: /usr/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3439
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8080 fd 3
+Python version: 3.4.0 (default, Apr 11 2014, 13:08:40)  [GCC 4.8.2]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x23b7ba0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 72760 bytes (71 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x23b7ba0 pid: 26335 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 26335, cores: 1)
+[pid: 26335|app: 0|req: 1/1] 172.16.1.224 () {50 vars in 925 bytes} [Mon Dec  8 19:22:32 2014] POST /wsgi.py => generated 355 bytes in 0 msecs (HTTP/1.1 200) 1 headers in 61 bytes (0 switches on core 0)
+[pid: 26335|app: 0|req: 2/2] 172.16.1.224 () {50 vars in 925 bytes} [Mon Dec  8 19:22:59 2014] POST /wsgi.py => generated 355 bytes in 0 msecs (HTTP/1.1 200) 1 headers in 61 bytes (0 switches on core 0)
+[pid: 26335|app: 0|req: 3/3] 172.16.1.224 () {50 vars in 925 bytes} [Mon Dec  8 19:23:02 2014] POST /wsgi.py => generated 355 bytes in 0 msecs (HTTP/1.1 200) 1 headers in 61 bytes (0 switches on core 0)

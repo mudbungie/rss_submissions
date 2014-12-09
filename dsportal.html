@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+	<title>DeskSite RSS Feed Submission</title>
+</head>
+
+<body>
+	<form	name = "DeskSite RSS Submission"
+	action = "wsgi.py"
+	method = "POST"
+	enctype = "multipart/form-data"
+	>
+		<b>Don't be stupid</b>
+		<br>
+		<p>Title:</p><input type="text" size="25" name="title"><p>The title of the video. Max 60 characters.</p><hr>
+		<p>Description:</p><input type="text" size="50" name="description"><p>Description for the video</p><hr>
+		<p>Keywords:</p><input type="text" size="25" name="keywords"><p>Contextual keywords per content item. Multiple keywords can be specified in a single node separated by commas. Max three keywords.</p><hr>
+	<!--	<p>Video File:</p><input type="file" name="uploadVideo"><hr>
+		<p>Thumbnail File:</p><input type="file" name="uploadThumbnail"><hr>
+	--!>
+		<input type="submit" value="Demo Video">
+	<!--	<input type="submit" value="Submit Video">
+	--!>
+		<br>
+	</form>
+	<br>
+	<a href=deletion.html>I have told Megan that I posted a video in error, and deleting it is the least flagellatory of the many steps being taken to remediate my degeneracy and incompetence.</a>
+</body>
+
+

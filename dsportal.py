@@ -1,37 +1,63 @@
+import xmlgen
+import uuid
+import datetime
+
 def form():
-	return '''
-<!DOCTYPE html>
-<head>
-	<title>DeskSite RSS Feed Submission</title>
-</head>
+	with open('dsportal.html', 'r')	as html:
+		yield(html.read().encode('utf-8'))
 
-<body>
-	<form 	name = "DeskSite RSS Submission"
-		action = "wsgi.py"
-		method = "POST"
-		enctype = "multipart/form-data"
-	>
-	<b>Don't be stupid</b>
-	<br>
-	<p>Title:</p><input type="text" size="25" name="title"><p>The title of the video. Max 60 characters.</p><hr>
-	<p>Description:</p><input type="text" size="50" name="description"><p>Description for the video</p><hr>
-	<p>Keywords:</p><input type="text" size="25" name="keywords"><p>Contextual keywords per content item. Multiple keywords can be specified in a single node separated by commas. Max three keywords.</p><hr>
-	<p>Caption:</p><input type="text" size="25" name="caption"><p>Caption to display under the video</p><hr>
-<!--	<p>Video File:</p><input type="file" name="uploadVideo"><hr>
-	<p>Thumbnail File:</p><input type="file" name="uploadThumbnail"><hr>
---!>
-	<input type="submit" value="Demo Video">
-<!--	<input type="submit" value="Submit Video">
---!>
-	<br>
-	</form>
-	<br>
-	<a href=deletion.html>I have told Megan that I posted a video in error, and deleting it is only one of the many steps being taken to remediate my degeneracy and incompetence.</a>
-</body>
-'''.encode('utf-8')
+def writeItem(title, guid, description, keywords):
+	# initialize the tags
+	item = xmlgen.XMLEnclosedTag('item')
+	itemGuid = xmlgen.XMLEnclosedTag('guid')
+	itemGuid.addContent(guid)
+	itemTitle = xmlgen.XMLEnclosedTag('title')
+	itemTitle.addContent(title)
+	itemDescription = xmlgen.XMLEnclosedTag('description')
+	itemDescription.addContent(description)
+	itemAuthor = xmlgen.XMLEnclosedTag('author')
+	itemAuthor.addContent('DeskSite')
+	itemMediaContent = xmlgen.XMLEnclosedTag('media:content')
+	itemMediaContent.addAttrib('duration', 'GOTTA DERIVE THIS')
+	itemMediaContent.addAttrib('type', 'video/mp4')
+	itemMediaContent.addAttrib('url', 'GOTTA DERIVE THIS')
+	itemMediaThumbnail = xmlgen.XMLTag('media:thumbnail')
+	itemMediaThumbnail.addAttrib('url', 'GOTTA DERIVE THIS')
+	itemMediaThumbnail.addAttrib('type', 'image/jpeg')
+	itemMediaThumbnail.addAttrib('height', 'GOTTA DERIVE THIS')
+	itemMediaThumbnail.addAttrib('width', 'GOTTA DERIVE THIS')
+	itemMediaTitle = xmlgen.XMLTag('media:title')
+	itemMediaTitle.addContent(title)
+	itemMediaCopyright = xmlgen.XMLEnclosedTag('media:copyright')
+	itemMediaCopyright.addContent('DeskSite')
+	itemPubDate = xmlgen.XMLEnclosedTag('pubdate')
+	itemPubDate.addContent(datetime.datetime.now().isoformat().split('.')[0])
+	itemMediaKeywords = xmlgen.XMLEnclosedTag('media:keywords')
+	itemMediaKeywords.addContent(keywords)
 
-'''
+	item.addChildTag(itemGuid)
+	item.addChildTag(itemTitle)
+	item.addChildTag(itemDescription)
+	item.addChildTag(itemAuthor)
+	item.addChildTag(itemMediaContent)
+	item.addChildTag(itemPubDate)
+	item.addChildTag(itemMediaKeywords)
+
+	itemMediaContent.addChildTag(itemMediaThumbnail)
+	itemMediaContent.addChildTag(itemMediaTitle)
+	itemMediaContent.addChildTag(itemMediaText)
+	itemMediaContent.addChildTag(itemMediaCopyright)
+	
+	return item.publish()
+
+def parseInput(httpPost):
+	httpPostSplit = httpPost.split('WebKitFormBoundary')
+	boundaryString = httpPostSplit[0]
+	for grouping in httpPost.split(WebKitFormBoundary):
+		
+
 def post(httpPost):
+	# takes a dict of values from the form
 	response = []
 
 	# generic function to test the strings given against our limiting parameters
@@ -39,7 +65,7 @@ def post(httpPost):
 				restrictedChar = False, restrictedCharMin = 0, restrictedCharMax = 0):
 		if len(field) > maxlength:
 			return False, fieldSoftName + ' is too long.'
-		elif len(field) > minlength:
+		elif len(field) < minlength:
 			return False, fieldSoftName + ' is too short.'
 		if restrictedChar:
 			if field.count(restrictedChar) <= restrictedCharMin:
@@ -55,15 +81,12 @@ def post(httpPost):
 	response.append(descriptionVerification[1])
 	keywordsVerfication = verifyPostField(httpPost['keywords'], 150, 6, ',', 3, 3)
 	response.append(keywordsVerification[1])
-	captionVerification = verifyPostField(httpPost['caption'], 60, 1)
-	response.append(captionVerification[1])
 
-	if 	titleVerification[0] == True and
+	if( titleVerification[0] == True and
 		descriptionVerification[0] == True and
-		keywordsVerification[0] == True and
-		captionVerification[0] == True:
-'''
-
-def post(httpPost):
-	for i in httpPost:
-		yield(i.encode('utf-8'))
+		keywordsVerification[0] == True):
+		
+		guid = uuid.uuid4()
+		item = writeItem(title, guid, description, keywords)
+		return item.emcode('utf-8')
+			

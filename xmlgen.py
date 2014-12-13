@@ -3,17 +3,21 @@
 class XMLTag:
 	def __init__(self, tag):
 		self.tag = tag
-	def addAttrib(attrib, value=None):
-		attribs.append(attrib)
+		self.attribs = []
+		self.values = {}
+	def addAttrib(self, attrib, value=None):
+		self.attribs.append(attrib)
 		if value:
-			values.append(attrib, value)
-	def publish():
+			self.values[attrib] = value
+	def publish(self):
 		tagString = '<' + self.tag
-		for attrib in attribs:
+		for attrib in self.attribs:
 			tagString = tagString + ' ' + attrib
-			if value in valus[attrib]:
-				tagstring = tagString + '=' + '"' + value + '"'
-		tagString = tagString + '>'
+			try:
+				tagString = tagString + '=' + '"' + self.values[attrib] + '"'
+			except KeyError:
+				raise
+		tagString = tagString + '/>'
 		return tagString
 
 class XMLEnclosedTag(XMLTag):
@@ -23,19 +27,21 @@ class XMLEnclosedTag(XMLTag):
 		self.attribs = []
 		self.values = {}
 		self.content = ''
-	def addChildTag(child):
+	def addChildTag(self, child):
 		self.childTags.append(child)
-	def addContent(content):
+	def addContent(self, content):
 		self.content = self.content + content
-	def publish():
+	def publish(self):
 		tagString = '<' + self.tag
 		for attrib in self.attribs:
 			tagString = tagString + ' ' + attrib
-			if value in self.values[attrib]:
-				tagstring = tagString + '=' + '"' + value + '"'
+			try:
+				tagString = tagString + '=' + '"' + self.values[attrib] + '"'
+			except KeyError:
+				raise
 		tagString = tagString + '>'
 		for child in self.childTags:
-			self.content = self.content + child.publish()
+			self.content = self.content + '\n' + child.publish()
 		tagString = tagString + self.content
 		tagString = tagString + '</' + self.tag + '>'
 		return tagString

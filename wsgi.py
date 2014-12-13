@@ -1,21 +1,33 @@
 import urllib.parse
 import dsportal
+import cgitb
+import cgi
+import rssgen
+
+cgitb.enable()
 
 def application(env, start_response):
 	method = env['REQUEST_METHOD']
 	try:
 		contentLength = int(env['CONTENT_LENGTH'])
-		post = (env['wsgi.input'].read(contentLength).decode())
-	except:
-		ValueError
+		postEnv = env.copy()
+		postEnv['QUERY STRING'] = ''
+		HTTPPost = cgi.FieldStorage(fp = env['wsgi.input'], environ = postEnv, keep_blank_values = True)
+	except ValueError:
 		pass
 	
-	start_response('200 OK', [('Content-Type', 'text/html; charset = utf-8')])
-	
-	if method == 'POST':
-#		for item in post.split('Content-Disposition: form-data'):
-#			yield(item.encode('utf-8') + '^^^'.encode('utf-8'))
-		return(post.encode('utf-8'))
-#		return(dsportal.post(post))
+
+	path = env['PATH_INFO']
+
+	if path == '/post':
+		start_response('200 OK', [('Content-Type', 'text/html; charset = utf-8')])
+		return(dsportal.post())
+	elif path == '/form':
+		start_response('200 OK', [('Content-Type', 'text/html; charset = utf-8')])
+		return(dsportal.form())
+	elif method == 'POST':
+		start_response('200 OK', [('Content-Type', 'application/xml; charset = utf-8')])
+		return(dsportal.preview(HTTPPost))
 	else:
-		return(dsportal.form())	
+		start_response('200 OK', [('Content-Type', 'application/xml; charset = utf-8')])
+		return(rssgen.feed())	
